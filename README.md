@@ -4,7 +4,7 @@ A native Mac app for configuring CH57x-based macro keyboards (VID `0x1189` / PID
 
 Directly programs the device firmware — no drivers, no Karabiner, no background services.
 
-![Dark mode UI showing three keys and a knob configurator](screenshot.png)
+![Macropad Configurator UI](https://raw.githubusercontent.com/musaad-hydary/macropad-configurator/main/screenshot.png)
 
 ## Features
 
