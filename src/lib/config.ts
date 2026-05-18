@@ -26,7 +26,7 @@ export const DEFAULT_CONFIG: MacropadConfig = {
   led: 3,
 };
 
-// ── Tauri bridge ──────────────────────────────────────────────────────────────
+// Tauri bridge
 
 async function tauriInvoke<T>(
   cmd: string,
@@ -39,7 +39,7 @@ async function tauriInvoke<T>(
 const isTauri = () =>
   typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
 
-// ── Public API ────────────────────────────────────────────────────────────────
+// Public API
 
 export async function checkConnected(): Promise<boolean> {
   if (!isTauri()) return true;

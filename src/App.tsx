@@ -12,7 +12,7 @@ import {
 } from "./lib/config";
 import { PRESETS } from "./lib/presets";
 
-// ── Themes ────────────────────────────────────────────────────────────────────
+// Themes
 
 const DARK = {
   bg: "#111111",
@@ -153,7 +153,7 @@ export default function App() {
     ...extra,
   });
 
-  // ── Onboarding ─────────────────────────────────────────────────────────────
+  // Onboarding
   if (view === "onboarding") {
     return (
       <div
@@ -233,7 +233,7 @@ export default function App() {
     );
   }
 
-  // ── Presets ────────────────────────────────────────────────────────────────
+  // Presets
   if (view === "presets") {
     return (
       <div
@@ -333,7 +333,7 @@ export default function App() {
     );
   }
 
-  // ── Main ───────────────────────────────────────────────────────────────────
+  // Main
   return (
     <div
       style={{

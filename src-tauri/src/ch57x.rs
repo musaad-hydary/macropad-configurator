@@ -61,36 +61,14 @@ pub fn set_led(mode: u8) -> Result<(), String> {
 }
 
 pub fn is_connected() -> bool {
-    let binary = match find_binary() {
-        Ok(b)  => b,
-        Err(_) => return false,
-    };
+    let output = Command::new("ioreg")
+        .args(["-p", "IOUSB", "-l"])
+        .output();
 
-    let check_yaml = b"rows: 1\ncolumns: 3\nknobs: 1\nlayers:\n  - buttons:\n      - [a, b, c]\n    knobs:\n      - cw: mute\n        ccw: mute\n        press: mute\n";
-
-    let child = Command::new(&binary)
-        .args([
-            "--vendor-id",  "4489",
-            "--product-id", "34960",
-            "validate",
-        ])
-        .stdin(std::process::Stdio::piped())
-        .stdout(std::process::Stdio::piped())
-        .stderr(std::process::Stdio::piped())
-        .spawn();
-
-    match child {
-        Ok(mut c) => {
-            if let Some(mut stdin) = c.stdin.take() {
-                let _ = stdin.write_all(check_yaml);
-            }
-            match c.wait_with_output() {
-                Ok(o) => {
-                    let stderr = String::from_utf8_lossy(&o.stderr);
-                    !stderr.contains("not found") && !stderr.contains("No such")
-                }
-                Err(_) => false,
-            }
+    match output {
+        Ok(o) => {
+            let stdout = String::from_utf8_lossy(&o.stdout);
+            stdout.contains("idProduct\" = 34960") && stdout.contains("idVendor\" = 4489")
         }
         Err(_) => false,
     }
