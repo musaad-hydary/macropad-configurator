@@ -172,7 +172,7 @@ export default function App() {
       >
         <div style={{ fontSize: "40px" }}>⌨️</div>
         <div style={{ fontSize: "18px", fontWeight: 700, color: t.text }}>
-          Welcome to Macropad
+          Welcome to Macropad Configurator
         </div>
         <div
           style={{

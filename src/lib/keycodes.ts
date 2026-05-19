@@ -16,7 +16,7 @@ export const MODIFIERS = [
 ];
 
 export const KEY_OPTIONS: KeyOption[] = [
-  // ── Common shortcuts ───────────────────────────────────────────────
+  // Common shortcuts
   { category: "Shortcuts", label: "Cmd + C", value: "cmd-c" },
   { category: "Shortcuts", label: "Cmd + V", value: "cmd-v" },
   { category: "Shortcuts", label: "Cmd + X", value: "cmd-x" },
@@ -34,7 +34,7 @@ export const KEY_OPTIONS: KeyOption[] = [
   { category: "Shortcuts", label: "Cmd + Space", value: "cmd-space" },
   { category: "Shortcuts", label: "Cmd + ,", value: "cmd-comma" },
 
-  // ── Mac system ────────────────────────────────────────────────────
+  // Mac system
   { category: "Mac", label: "Screenshot Area", value: "cmd-shift-4" },
   { category: "Mac", label: "Screenshot Options", value: "cmd-shift-5" },
   { category: "Mac", label: "Spotlight", value: "cmd-space" },
@@ -45,7 +45,7 @@ export const KEY_OPTIONS: KeyOption[] = [
   { category: "Mac", label: "Brightness Up", value: "macbrightnessup" },
   { category: "Mac", label: "Brightness Down", value: "macbrightnessdown" },
 
-  // ── Media ──────────────────────────────────────────────────────────
+  // Media
   { category: "Media", label: "Play / Pause", value: "play" },
   { category: "Media", label: "Next Track", value: "next" },
   { category: "Media", label: "Prev Track", value: "prev" },
@@ -54,7 +54,7 @@ export const KEY_OPTIONS: KeyOption[] = [
   { category: "Media", label: "Mute", value: "mute" },
   { category: "Media", label: "Stop", value: "stop" },
 
-  // ── Mouse ──────────────────────────────────────────────────────────
+  // Mouse 
   { category: "Mouse", label: "Left Click", value: "click(left)" },
   { category: "Mouse", label: "Right Click", value: "click(right)" },
   { category: "Mouse", label: "Middle Click", value: "click(middle)" },
@@ -63,7 +63,7 @@ export const KEY_OPTIONS: KeyOption[] = [
   { category: "Mouse", label: "Scroll Up Fast", value: "wheel(-15)" },
   { category: "Mouse", label: "Scroll Down Fast", value: "wheel(15)" },
 
-  // ── Navigation ─────────────────────────────────────────────────────
+  // Navigation 
   { category: "Navigation", label: "Up", value: "up" },
   { category: "Navigation", label: "Down", value: "down" },
   { category: "Navigation", label: "Left", value: "left" },
@@ -80,7 +80,7 @@ export const KEY_OPTIONS: KeyOption[] = [
   { category: "Navigation", label: "Enter", value: "enter" },
   { category: "Navigation", label: "Caps Lock", value: "capslock" },
 
-  // ── Function keys ──────────────────────────────────────────────────
+  // Function keys 
   { category: "Function", label: "F1", value: "f1" },
   { category: "Function", label: "F2", value: "f2" },
   { category: "Function", label: "F3", value: "f3" },
@@ -106,14 +106,14 @@ export const KEY_OPTIONS: KeyOption[] = [
   { category: "Function", label: "F23", value: "f23" },
   { category: "Function", label: "F24", value: "f24" },
 
-  // ── Letters ────────────────────────────────────────────────────────
+  // Letters 
   ..."abcdefghijklmnopqrstuvwxyz".split("").map((c) => ({
     category: "Keys",
     label: c.toUpperCase(),
     value: c,
   })),
 
-  // ── Numbers ────────────────────────────────────────────────────────
+  // Numbers
   ..."0123456789".split("").map((n) => ({
     category: "Keys",
     label: n,
@@ -123,7 +123,7 @@ export const KEY_OPTIONS: KeyOption[] = [
 
 export const CATEGORIES = [...new Set(KEY_OPTIONS.map((k) => k.category))];
 
-// ── Validation ────────────────────────────────────────────────────────────────
+// Validation
 
 const VALID_KEYS = new Set([
   "a",
