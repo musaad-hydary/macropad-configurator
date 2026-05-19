@@ -16,7 +16,8 @@
         "width": 420,
         "height": 550,
         "resizable": false,
-        "center": true
+        "center": true,
+        "backgroundColor": "#111111"
       }
     ],
     "security": {
